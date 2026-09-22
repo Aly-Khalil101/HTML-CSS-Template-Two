@@ -2,6 +2,7 @@
 :root {
   --main-color: #19c8fa;
   --transparent-color: rgb(15 116 143 / 70%);
+  --section-padding: 70px;
 }
 /* End Variable */
 /* Start Global Rules */
@@ -16,7 +17,6 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: black;
   font-family: "Open Sans", sans-serif;
 }
 ul {
@@ -49,6 +49,49 @@ ul {
   }
 }
 /* End Global Rules */
+/* Start Components */
+.main-heading {
+  text-align: center;
+}
+.main-heading h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+
+.main-heading h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  height: 2px;
+  width: 130px;
+  background: #333;
+}
+.main-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 3px solid #333;
+  bottom: -40px;
+  background-color: white;
+}
+.main-heading p {
+  width: 550px;
+  margin: 0 auto;
+  max-width: 100%;
+  line-height: 1.8;
+  color: #777;
+}
+
+/* End Components */
 /* Start Header */
 header {
   position: absolute;
@@ -225,3 +268,44 @@ header .form i {
   }
 }
 /* End Landing */
+/* Start Services */
+.services {
+  padding: var(--section-padding) 0;
+}
+.services .services-container {
+  margin-top: 45px;
+}
+.services .srv-box {
+  display: flex;
+  margin: 40px 0;
+}
+.services .srv-box i {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-right: 18px;
+}
+@media (max-width: 1000px) {
+  .services .srv-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  .services .srv-box i {
+    margin: 35px auto;
+  }
+}
+.services .srv-box h3 {
+  margin-bottom: 20px;
+  color: var(--main-color);
+}
+.services .srv-box p {
+  line-height: 1.7;
+  color: #777777;
+}
+@media (min-width: 1000px) {
+  .services .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-column-gap: 40px;
+  }
+}
+/* End Services */
